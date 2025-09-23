@@ -9,12 +9,11 @@
     }
 
 
-    $szoveg = '';
+ 
     
     if(isset($_POST['topic'])){
        array_push($topics, $_POST['topic']);
        $jsonString = json_encode($topics);
-       $szoveg = $jsonString;
        file_put_contents($fileName, $jsonString);
     }
 ?>
@@ -31,6 +30,9 @@
     ?>
     <h1>Témák:</h1>
 
+    <?php
+
+    ?>
     <form action="" method="post">
         <input type="text" name="topic">
         <input type="submit" value="Add">
