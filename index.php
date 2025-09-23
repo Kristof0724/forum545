@@ -25,14 +25,15 @@
     <title>Fórum</title>
 </head>
 <body>
-    <?php
-        echo $szoveg;
-    ?>
+    
     <h1>Témák:</h1>
-
+    <ol>
     <?php
-
+        foreach ($topics as $value) {
+            echo '<li>' . $value;
+        }
     ?>
+    </ol>
     <form action="" method="post">
         <input type="text" name="topic">
         <input type="submit" value="Add">
