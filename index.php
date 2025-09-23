@@ -30,7 +30,7 @@
     <ol>
     <?php
         foreach ($topics as $value) {
-            echo '<li>' . $value;
+            echo '<li>' . $value .'<input type=button value="törlés">';
         }
     ?>
     </ol>
