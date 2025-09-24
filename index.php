@@ -22,14 +22,26 @@
 
         if($_POST['action']=='add')
         {
-       array_push($topics, 
-        (object)[
+            array_push($topics, 
+            (object)[
             "id" => $newID,
             "name" => $_POST['topic']
-        ]);
-       $jsonString = json_encode($topics, JSON_PRETTY_PRINT);
-       file_put_contents($fileName, $jsonString);
+            ]);
+            $jsonString = json_encode($topics, JSON_PRETTY_PRINT);
+            file_put_contents($fileName, $jsonString);
+        }elseif(($_POST['action']=='delete')){
+            $topicid = $_POST['topic'];
+            foreach ($topics as $key => $value) {
+                if($value->id == $topicid){
+                    unset($topics[$key]);
+                    break;
+                }
+            }
+            $jsonString = json_encode($topics, JSON_PRETTY_PRINT);
+            file_put_contents($fileName, $jsonString);
         }
+
+
     }
 ?>
 <!DOCTYPE html>
