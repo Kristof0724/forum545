@@ -13,10 +13,21 @@
 
     
     if(isset($_POST['action'])){
+        $lastID = 0;
+        if(!empty($topics)){
+            $lastItem = end($topics);
+            $lastID = $lastItem->id;
+        }
+        $newID = $lastID+1;
+
         if($_POST['action']=='add')
         {
-       array_push($topics, $_POST['topic']);
-       $jsonString = json_encode($topics);
+       array_push($topics, 
+        (object)[
+            "id" => $newID,
+            "name" => $_POST['topic']
+        ]);
+       $jsonString = json_encode($topics, JSON_PRETTY_PRINT);
        file_put_contents($fileName, $jsonString);
         }
     }
@@ -34,9 +45,9 @@
     <ol>
     <?php
         foreach ($topics as $value) {
-            echo '<li>' . $value .'
+            echo '<li>' . $value->name .'
             <form method="post">
-            <input type="hidden" name="topic"  value="'. $value. '">
+            <input type="hidden" name="topic"  value="'. $value->id. '">
             <input type="hidden" name="action" value="delete">
             <input type=submit value="törlés">
             </form>

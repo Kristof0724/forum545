@@ -1,1 +1,10 @@
-["fds","fds","fds","alma","alma","fds","fds","fds","fds"]
+[
+    {
+        "id": 1,
+        "name": "gdgser"
+    },
+    {
+        "id": 2,
+        "name": "kuki"
+    }
+]
