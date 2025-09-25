@@ -29,11 +29,13 @@
             ]);
             $jsonString = json_encode($topics, JSON_PRETTY_PRINT);
             file_put_contents($fileName, $jsonString);
-        }elseif(($_POST['action']=='delete')){
-            $topicid = $_POST['topic'];
+        } elseif (($_POST['action']=='delete')) {
+            $topicid = $_POST['id'];
             foreach ($topics as $key => $value) {
                 if($value->id == $topicid){
-                    unset($topics[$key]);
+                    // unset($topics[$key]);
+                    // $topics = array_values($topics);
+                    array_splice($topics, $key,1);
                     break;
                 }
             }
@@ -59,7 +61,7 @@
         foreach ($topics as $value) {
             echo '<li>' . $value->name .'
             <form method="post">
-            <input type="hidden" name="topic"  value="'. $value->id. '">
+            <input type="hidden" name="id"  value="'. $value->id. '">
             <input type="hidden" name="action" value="delete">
             <input type=submit value="törlés">
             </form>
