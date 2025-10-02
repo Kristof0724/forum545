@@ -1,0 +1,99 @@
+/* Alap stílusok */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    margin: 15px 0;
+}
+
+input[type="text"], input[type="submit"], textarea {
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Téma lista */
+ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+li form {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Téma és kommentek */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fafafa;
+    border-left: 5px solid #007bff;
+}
+
+/* Téma hozzáadása szakasz */
+h2 {
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Kommentek formázása */
+textarea {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Kis távolságok */
+br {
+    margin-bottom: 10px;
+}
